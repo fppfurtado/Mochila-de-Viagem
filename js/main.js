@@ -8,16 +8,14 @@ form.addEventListener('submit', (evento) => {
     quantidade = evento.target.elements['quantidade'].value;
 
     const lista = document.getElementById('lista');
-
-    novoItem = document.createElement('li');
-    novoItem.classList.add('item');
+    const novoItem = document.createElement('li');
+    const numeroItem = document.createElement('strong');
     
-    numeroItem = document.createElement('strong');
-    numeroItem.innerHTML = quantidade;
-
-    novoItem.appendChild(numeroItem);
-    novoItem.innerHTML += nome;
-
     lista.appendChild(novoItem);
+    novoItem.appendChild(numeroItem);
+    
+    novoItem.classList.add('item');        
+    numeroItem.innerHTML = quantidade;
+    novoItem.innerHTML += nome;
 
 });
