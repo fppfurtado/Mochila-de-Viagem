@@ -7,17 +7,22 @@ form.addEventListener('submit', (evento) => {
     nome = evento.target.elements['nome'].value;
     quantidade = evento.target.elements['quantidade'].value;
 
+    criarElemento(nome, quantidade);
+
+});
+
+function criarElemento(nome, quantidade) {
+
     const lista = document.getElementById('lista');
-
-    novoItem = document.createElement('li');
-    novoItem.classList.add('item');
+    const novoItem = document.createElement('li');
+    const numeroItem = document.createElement('strong');
     
-    numeroItem = document.createElement('strong');
-    numeroItem.innerHTML = quantidade;
-
+    novoItem.classList.add('item');    
     novoItem.appendChild(numeroItem);
+    
+    numeroItem.innerHTML = quantidade;    
     novoItem.innerHTML += nome;
 
     lista.appendChild(novoItem);
 
-});
+}
